@@ -1,9 +1,9 @@
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-    host: 'viaduct.proxy.rlwy.net',
+    host: 'roundhouse.proxy.rlwy.net',
     user: 'root',
-    password: 'c4H2E3BD2hA5gG1EAfBCgdGF1hd6gD6E',
+    password: 'GcheG-C2C2Ag2EbGC33623ebb6HFBef2',
     database: "railway",
     connectTimeout: 20000
 });
