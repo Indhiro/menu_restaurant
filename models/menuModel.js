@@ -1,8 +1,9 @@
 const con = require('../config/config');
+require('dotenv').config()
 
 class menuModel {
     static getAllMenu(req, res, next) {
-        let query = `SELECT * FROM ${'`process.env.DATABASE`'}.menus
+        let query = `SELECT * FROM ${process.env.DATABASE}.menus
                     WHERE deleted_at IS NULL`
         con.query(query, function(err, result, fields) {
             if (err) {
