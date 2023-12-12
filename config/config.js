@@ -1,15 +1,19 @@
+require('dotenv').config()
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-    host: 'roundhouse.proxy.rlwy.net',
-    user: 'root',
-    password: 'GcheG-C2C2Ag2EbGC33623ebb6HFBef2',
-    database: "railway",
-    connectTimeout: 20000
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
+    connectTimeout: 10000,
+    port: 59942
 });
 
+console.log(con);
+
 con.connect(function (err) {
-    if (err) console.log(err);;
+    if (err) throw err.message;
     let queryDb = `CREATE DATABASE IF NOT EXISTS db_restaurant`
     con.query(queryDb, function(err, result, fields) {
         if (err) console.log(2);
